@@ -1,11 +1,12 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
-MAINTAINER Bo Gao (bogao@dcs.warwick.ac.uk)
+# ORIGINAL MAINTAINER Bo Gao (bogao@dcs.warwick.ac.uk)
+MAINTAINER Aarne Klemetti (aarne.klemetti@metropolia.fi)
 LABEL Description="Dockerised Simulation of Urban MObility(SUMO)"
 
 ENV SUMO_VERSION 0.31.0
 ENV SUMO_HOME /opt/sumo
-ENV SUMO_USER your_username
+ENV SUMO_USER atest
 
 # Install system dependencies.
 RUN apt-get update && apt-get -qq install \
@@ -14,7 +15,7 @@ RUN apt-get update && apt-get -qq install \
     make \
     libxerces-c-dev \
     libfox-1.6-0 libfox-1.6-dev \
-    python2.7
+    python3.9
 
 # Download and extract source code
 RUN wget http://downloads.sourceforge.net/project/sumo/sumo/version%20$SUMO_VERSION/sumo-src-$SUMO_VERSION.tar.gz
