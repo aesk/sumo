@@ -27,7 +27,7 @@ ENV SUMO_USER atest
 
 # RUN sudo apt-get install sumo sumo-tools sumo-doc
 
-RUN apt update
+RUN sudo apt update
 RUN sudo apt install sumo sumo-tools sumo-doc
 
 
