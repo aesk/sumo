@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:16.04
 
 # ORIGINAL MAINTAINER Bo Gao (bogao@dcs.warwick.ac.uk)
 MAINTAINER Aarne Klemetti (aarne.klemetti@metropolia.fi)
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get -qq install \
     make \
     libxerces-c-dev \
     libfox-1.6-0 libfox-1.6-dev \
-    python3.9
+    python2.7
 
 # Download and extract source code
 RUN wget http://downloads.sourceforge.net/project/sumo/sumo/version%20$SUMO_VERSION/sumo-src-$SUMO_VERSION.tar.gz
