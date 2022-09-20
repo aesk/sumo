@@ -23,7 +23,10 @@ ENV SUMO_USER atest
 
 # RUN sudo apt-get update 
 # RUN sudo apt-get upgrade 
-RUN sudo add-apt-repository ppa:sumo/stable
+# RUN sudo add-apt-repository ppa:sumo/stable
+
+# RUN sudo apt-get install sumo sumo-tools sumo-doc
+
 RUN sudo apt-get update
 RUN sudo apt-get install sumo sumo-tools sumo-doc
 
