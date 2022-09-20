@@ -21,8 +21,8 @@ ENV SUMO_USER atest
     
 # Python is already in the distro    \python2.7
 
-RUN sudo apt-get update 
-RUN sudo apt-get upgrade 
+# RUN sudo apt-get update 
+# RUN sudo apt-get upgrade 
 RUN sudo add-apt-repository ppa:sumo/stable
 RUN sudo apt-get update
 RUN sudo apt-get install sumo sumo-tools sumo-doc
