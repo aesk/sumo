@@ -1,10 +1,13 @@
-FROM ubuntu:16.04
+# ORIGINAL:FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # ORIGINAL MAINTAINER Bo Gao (bogao@dcs.warwick.ac.uk)
 MAINTAINER Aarne Klemetti (aarne.klemetti@metropolia.fi)
 LABEL Description="Dockerised Simulation of Urban MObility(SUMO)"
 
-ENV SUMO_VERSION 0.31.0
+# ORIGINAL:ENV SUMO_VERSION 0.31.0
+ENV SUMO_VERSION 1.14.1
+
 ENV SUMO_HOME /opt/sumo
 ENV SUMO_USER atest
 
@@ -14,8 +17,15 @@ RUN apt-get update && apt-get -qq install \
     g++ \
     make \
     libxerces-c-dev \
-    libfox-1.6-0 libfox-1.6-dev \
+    libfox-1.6-0 libfox-1.6-dev
+    
+# Python is already in the distro    \
     python2.7
+    
+RUN sudo add-apt-repository ppa:sumo/stable
+RUN sudo apt-get update
+RUN sudo apt-get install sumo sumo-tools sumo-doc
+
 
 # Download and extract source code
 RUN wget http://downloads.sourceforge.net/project/sumo/sumo/version%20$SUMO_VERSION/sumo-src-$SUMO_VERSION.tar.gz
