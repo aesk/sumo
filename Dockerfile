@@ -28,7 +28,7 @@ ENV SUMO_USER atest
 # RUN sudo apt-get install sumo sumo-tools sumo-doc
 
 RUN apt-get update
-RUN apt-get install sumo sumo-tools sumo-doc
+# RUN apt-get install sumo sumo-tools sumo-doc
 
 
 # Download and extract source code
