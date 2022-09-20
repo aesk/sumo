@@ -12,28 +12,30 @@ ENV SUMO_HOME /opt/sumo
 ENV SUMO_USER atest
 
 # Install system dependencies.
-RUN apt-get update && apt-get -qq install \
-    wget \
-    g++ \
-    make \
-    libxerces-c-dev \
-    libfox-1.6-0 libfox-1.6-dev
+# RUN apt-get update && apt-get -qq install \
+#     wget \
+#     g++ \
+#     make \
+#     libxerces-c-dev \
+#     libfox-1.6-0 libfox-1.6-dev
     
 # Python is already in the distro    \python2.7
-    
+
+RUN sudo apt-get update 
+RUN sudo apt-get upgrade 
 RUN sudo add-apt-repository ppa:sumo/stable
 RUN sudo apt-get update
 RUN sudo apt-get install sumo sumo-tools sumo-doc
 
 
 # Download and extract source code
-RUN wget http://downloads.sourceforge.net/project/sumo/sumo/version%20$SUMO_VERSION/sumo-src-$SUMO_VERSION.tar.gz
-RUN tar xzf sumo-src-$SUMO_VERSION.tar.gz && \
-    mv sumo-$SUMO_VERSION $SUMO_HOME && \
-    rm sumo-src-$SUMO_VERSION.tar.gz
+# RUN wget http://downloads.sourceforge.net/project/sumo/sumo/version%20$SUMO_VERSION/sumo-src-$SUMO_VERSION.tar.gz
+# RUN tar xzf sumo-src-$SUMO_VERSION.tar.gz && \
+#     mv sumo-$SUMO_VERSION $SUMO_HOME && \
+#     rm sumo-src-$SUMO_VERSION.tar.gz
 
 # Configure and build from source.
-RUN cd $SUMO_HOME && ./configure && make install
+# RUN cd $SUMO_HOME && ./configure && make install
 
 RUN adduser $SUMO_USER --disabled-password
 USER $SUMO_USER
