@@ -27,4 +27,5 @@ RUN tar xzf sumo-src-$SUMO_VERSION.tar.gz && \
 RUN cd $SUMO_HOME && ./configure && make install
 
 RUN adduser $SUMO_USER --disabled-password
+USER $SUMO_USER
 # CMD sumo-gui
