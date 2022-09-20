@@ -19,8 +19,7 @@ RUN apt-get update && apt-get -qq install \
     libxerces-c-dev \
     libfox-1.6-0 libfox-1.6-dev
     
-# Python is already in the distro    \
-    python2.7
+# Python is already in the distro    \python2.7
     
 RUN sudo add-apt-repository ppa:sumo/stable
 RUN sudo apt-get update
