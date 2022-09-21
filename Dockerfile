@@ -56,4 +56,4 @@ RUN add-apt-repository ppa:sumo/stable && apt update && apt install sumo -y sum
 # RUN adduser $SUMO_USER --disabled-password
 # RUN usermod -aG sudo $SUMO_USER
 USER $SUMO_USER
-CMD sumo-gui
+# CMD sumo-gui
