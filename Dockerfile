@@ -13,7 +13,7 @@ ENV SUMO_USER atest
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt update
+RUN apt update && apt install sumo sumo-tools sumo-doc wget && adduser $SUMO_USER --disabled-password && usermod -aG sudo $SUMO_USER
 
 # Install system dependencies.
 # RUN apt-get update && apt-get -qq install \
@@ -48,5 +48,5 @@ RUN apt update
 
 # RUN adduser $SUMO_USER --disabled-password
 # RUN usermod -aG sudo $SUMO_USER
-# USER $SUMO_USER
+USER $SUMO_USER
 # CMD sumo-gui
