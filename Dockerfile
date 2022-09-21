@@ -11,6 +11,10 @@ ENV SUMO_VERSION 1.14.1
 ENV SUMO_HOME /opt/sumo
 ENV SUMO_USER atest
 
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt update
+
 # Install system dependencies.
 # RUN apt-get update && apt-get -qq install \
 #     wget \
@@ -40,9 +44,9 @@ ENV SUMO_USER atest
 # Configure and build from source.
 # RUN cd $SUMO_HOME && ./configure && make install
 
-RUN apt-get install sudo
+# RUN apt-get install sudo
 
-RUN adduser $SUMO_USER --disabled-password
-RUN usermod -aG sudo $SUMO_USER
-USER $SUMO_USER
+# RUN adduser $SUMO_USER --disabled-password
+# RUN usermod -aG sudo $SUMO_USER
+# USER $SUMO_USER
 # CMD sumo-gui
