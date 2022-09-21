@@ -41,5 +41,6 @@ ENV SUMO_USER atest
 # RUN cd $SUMO_HOME && ./configure && make install
 
 RUN adduser $SUMO_USER --disabled-password
+RUN usermod -aG sudo $SUMO_USER
 USER $SUMO_USER
 # CMD sumo-gui
