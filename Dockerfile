@@ -15,7 +15,7 @@ ENV SUMO_PSW atest124
 ARG DEBIAN_FRONTEND=noninteractive
 
 # RUN add-apt-repository ppa:sumo/stable && apt update && apt install sumo -y sumo-tools -y sumo-doc -y && adduser $SUMO_USER --disabled-password && usermod -aG sudo $SUMO_USER
-RUN apt update && apt install sumo -y sumo-tools -y sumo-doc -y && adduser $SUMO_USER --disabled-password && usermod -aG sudo $SUMO_USER
+# RUN apt update && apt install sumo -y sumo-tools -y sumo-doc -y && adduser $SUMO_USER --disabled-password && usermod -aG sudo $SUMO_USER
 # sudo add-apt-repository ppa:sumo/stable
 # sudo apt-get update
 # sudo apt-get install sumo sumo-tools sumo-doc
