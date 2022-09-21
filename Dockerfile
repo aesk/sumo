@@ -40,7 +40,7 @@ ENV SUMO_USER atest
 # Configure and build from source.
 # RUN cd $SUMO_HOME && ./configure && make install
 
-RUN apt install sudo
+RUN apt-get install sudo
 
 RUN adduser $SUMO_USER --disabled-password
 RUN usermod -aG sudo $SUMO_USER
