@@ -10,10 +10,17 @@ ENV SUMO_VERSION 1.14.1
 
 ENV SUMO_HOME /opt/sumo
 ENV SUMO_USER atest
+ENV SUMO_PSW atest124
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt install sumo -y sumo-tools -y sumo-doc -y && adduser $SUMO_USER --disabled-password && usermod -aG sudo $SUMO_USER
+RUN add-apt-repository ppa:sumo/stable && apt update && apt install sumo -y sumo-tools -y sumo-doc -y && adduser $SUMO_USER --disabled-password && usermod -aG sudo $SUMO_USER
+
+# sudo add-apt-repository ppa:sumo/stable
+# sudo apt-get update
+# sudo apt-get install sumo sumo-tools sumo-doc
+
+
 
 # Install system dependencies.
 # RUN apt-get update && apt-get -qq install \
@@ -48,5 +55,5 @@ RUN apt update && apt install sumo -y sumo-tools -y sumo-doc -y && adduser $SUMO
 
 # RUN adduser $SUMO_USER --disabled-password
 # RUN usermod -aG sudo $SUMO_USER
-# USER $SUMO_USER
+USER $SUMO_USER
 CMD sumo-gui
