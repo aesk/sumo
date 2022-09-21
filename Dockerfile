@@ -49,4 +49,4 @@ RUN apt update && apt install sumo -y sumo-tools -y sumo-doc -y && adduser $SUMO
 # RUN adduser $SUMO_USER --disabled-password
 # RUN usermod -aG sudo $SUMO_USER
 USER $SUMO_USER
-# CMD sumo-gui
+CMD sumo-gui
